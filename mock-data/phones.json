@@ -1,0 +1,6 @@
+[
+    { "id": 1, "phone_status": "NOT_PROCESSED", "phone": "+12133734253", "can_be_dialed": null },
+    { "id": 2, "phone_status": "PROCESSED", "phone": "+78005553535", "can_be_dialed": true },
+    { "id": 3, "phone_status": "NOT_PROCESSED", "phone": "+387-635-5583-5" },
+    { "id": 4, "phone_status": "NOT_PROCESSED", "phone": "+359897777777", "can_be_dialed": false }
+]

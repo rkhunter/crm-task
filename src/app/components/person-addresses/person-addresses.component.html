@@ -1,0 +1,42 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-addresses">
+
+    <ng-container matColumnDef="addressStatus">
+        <th mat-header-cell *matHeaderCellDef fxFlex="20" fxLayoutAlign="center center">Status</th>
+        <td mat-cell *matCellDef="let element" fxFlex="20" fxLayoutAlign="center center"
+            [ngSwitch]="element.addressStatus">
+            <span *ngSwitchCase="'PROCESSED'">Processed</span>
+            <span *ngSwitchCase="'NOT_PROCESSED'">Not Processed</span>
+            <span *ngSwitchDefault>Unknown</span>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef fxFlex="40" fxLayoutAlign="center center">Address</th>
+        <td mat-cell *matCellDef="let element" fxFlex="40" fxLayoutAlign="center center">
+            {{element | formatAddress }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="visited">
+        <th mat-header-cell *matHeaderCellDef fxFlex="20" fxLayoutAlign="center center">Visited</th>
+        <td mat-cell *matCellDef="let element" fxFlex="20" fxLayoutAlign="center center"
+            [ngSwitch]="element.visited">
+            <span *ngSwitchCase="false">Not Visited</span>
+            <span *ngSwitchCase="true">Visited</span>
+            <span *ngSwitchDefault>Unknown</span></td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef fxFlex="20" fxLayoutAlign="center center">Edit</th>
+        <td mat-cell *matCellDef="let element" fxFlex="20" fxLayoutAlign="center center">
+            <button mat-button matTooltip="Edit address" (click)="showEditDialog(element)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator #addressesTablePaginator [length]="dataSource.totalItems$ | async" [pageSizeOptions]="pageSizeOptions"
+    showFirstLastButtons></mat-paginator>

@@ -1,0 +1,20 @@
+<h2 mat-dialog-title *ngIf="data.title">{{data.title}}</h2>
+<mat-dialog-content fxLayout="column">
+    <div *ngFor="let control of data.controls" [ngSwitch]="control.type">
+        <div *ngSwitchCase="'radio'" fxLayout="column" style="overflow-y: hidden;">
+            <label [id]="control.id" *ngIf="control.label">{{control.label}}</label>
+            <mat-radio-group
+              [(ngModel)]="control.value"
+              fxLayout="column">
+              <mat-radio-button *ngFor="let option of control.options" [value]="option.value">
+                {{option.label}}
+              </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close *ngIf="data.cancelButtonLabel" (click)="close()">{{data.cancelButtonLabel}}</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="true" (click)="save()">{{data.confirmationButtonLabel ? data.confirmationButtonLabel : 'OK'}}</button>
+</mat-dialog-actions>

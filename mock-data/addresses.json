@@ -1,0 +1,6 @@
+[
+    { "id": 1, "address_status": "NOT_PROCESSED", "country": "Bulgaria", "city": "Sofia", "region": "Sofia city", "postal": "1000", "street_address": "Vitosha 1", "visited": null },
+    { "id": 2, "address_status": "PROCESSED", "country": "Bulgaria", "city": "Sofia", "region": "Sofia city", "postal": "1234", "street_address": "Cherni Vrah 2", "visited": true },
+    { "id": 3, "address_status": "NOT_PROCESSED", "country": "Bulgaria", "city": "Plovdiv", "region": "Plovdiv", "postal": "4000", "street_address": "Balkan" },
+    { "id": 4, "address_status": "NOT_PROCESSED", "country": "Bulgaria", "city": "Varna", "region": "Varna", "postal": "8000", "street_address": "Odessa", "visited": false }
+]

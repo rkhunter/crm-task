@@ -1,0 +1,4 @@
+<mat-list>
+    <h3 mat-subheader>Persons</h3>
+    <a mat-list-item *ngFor="let person of persons$ | async; trackBy: personsTrackByFn" [routerLink]="'/person-details/'+person.id" routerLinkActive="active">{{ person.firstName }} {{ person.lastName }}</a>
+</mat-list>

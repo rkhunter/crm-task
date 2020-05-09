@@ -1,0 +1,13 @@
+<div *ngIf="(person$ | async) as person">
+    <mat-tab-group (selectedTabChange)="tabChanged($event)">
+        <mat-tab label="Phones">
+            <app-person-phones *ngIf="previouslySelectedTabs.includes(0)" [personId]="person.id"></app-person-phones>
+        </mat-tab>
+        <mat-tab label="Addresses">
+            <app-person-addresses *ngIf="previouslySelectedTabs.includes(1)" [personId]="person.id"></app-person-addresses>
+        </mat-tab>
+        <mat-tab label="OtherContacts">
+            <app-person-other-contacts *ngIf="previouslySelectedTabs.includes(2)" [personId]="person.id"></app-person-other-contacts>
+        </mat-tab>
+      </mat-tab-group>
+</div>

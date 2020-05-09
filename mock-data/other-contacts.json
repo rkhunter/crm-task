@@ -1,0 +1,6 @@
+[
+    { "id": 1, "status": "NOT_PROCESSED", "information": "Something A", "isValid": null },
+    { "id": 2, "status": "PROCESSED", "information": "Something B", "isValid": true },
+    { "id": 3, "status": "NOT_PROCESSED", "information": "Something C" },
+    { "id": 4, "status": "NOT_PROCESSED", "information": "Something D", "isValid": false }
+]
